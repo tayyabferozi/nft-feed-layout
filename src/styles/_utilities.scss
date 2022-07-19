@@ -7,11 +7,16 @@
   padding: 0;
   font-family: "Poppins", sans-serif;
   color: #fff;
+  text-decoration: none;
 }
 
 body {
   font-size: 16px;
   background-color: $color1;
+}
+
+.text-green {
+  color: #008000;
 }
 
 .text-red {
@@ -46,6 +51,39 @@ input {
   @include transitioned;
 
   &:focus {
-    box-shadow: 0 0 10px rgb(35, 35, 35);
+    @include shadowed;
+  }
+}
+
+.text-light {
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.text-secondary-1 {
+  color: $color5;
+}
+
+.btn {
+  background-color: $color1;
+  border-radius: 10px;
+  height: 50px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  padding: 8px 26px;
+
+  @include transitioned;
+
+  &:hover {
+    transform: scale(1.04);
+
+    @include shadowed;
+  }
+
+  .btn-text {
+    color: #fff;
   }
 }

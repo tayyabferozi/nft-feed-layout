@@ -2,3 +2,8 @@ $color1: #1f1f1f;
 $color2: #1a1a1a;
 $color3: #262626;
 $color4: #4ab7ce;
+$color5: #c27cff;
+$color6: rgba(
+  $color: $color5,
+  $alpha: 0.5,
+);
