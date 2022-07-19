@@ -90,7 +90,7 @@ const MainLayout = ({ children }: Props) => {
               </div>
             </div>
             <div className="col-xxl-4 col-xl-3">
-              <div className="p-4">
+              <div className="p-4 stats-section">
                 <h3 className="text-center">Stats</h3>
               </div>
             </div>
