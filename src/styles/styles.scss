@@ -9,15 +9,69 @@
   & > * {
   }
 
+  .logo {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .nav-sm {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color1;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 5;
+
+    .logo {
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: #fff;
+      }
+    }
+  }
+
   .nav {
     padding: 40px 20px;
     width: 130px;
     text-align: center;
     background-color: $color2;
 
+    @include transitioned;
+
+    @media screen and (max-width: 575px) {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      left: 100%;
+
+      &.active {
+        left: 0;
+      }
+    }
+
+    .close {
+      position: absolute;
+      right: 28px;
+      top: 28px;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
     .logo {
-      font-size: 26px;
-      font-weight: bold;
       margin-bottom: 3rem;
     }
 
@@ -54,14 +108,25 @@
     display: flex;
     flex-direction: column;
 
+    @media screen and (max-width: 575px) {
+      margin-top: 80px;
+    }
+
     .top-section {
       background-color: $color3;
-      padding: 1.5rem;
+      padding: 40px 1.5rem;
       overflow-x: hidden;
       flex-shrink: 0;
 
+      @media screen and (max-width: 575px) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
       .main-row {
-        --bs-gutter-x: 100px;
+        @media screen and (min-width: 1400px) {
+          --bs-gutter-x: 100px;
+        }
       }
 
       input {
@@ -79,6 +144,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media screen and (max-width: 575px) {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: 40px;
+        }
 
         .card {
           position: relative;
@@ -140,6 +211,11 @@
       &:last-child {
         border-right: 0;
       }
+
+      @media screen and (max-width: 575px) {
+        font-size: 14px;
+        padding: 20px 10px;
+      }
     }
 
     .img {
@@ -155,7 +231,9 @@
 .layout-right-main-row {
   & > * {
     &:nth-child(2) {
-      background-color: $color2;
+      @media screen and (min-width: 992px) {
+        background-color: $color2;
+      }
     }
   }
 }
