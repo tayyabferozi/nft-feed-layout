@@ -45,11 +45,14 @@
     }
   }
 
-  .main-layout-content {
+  .right-wrap {
+    overflow: auto;
     flex-grow: 1;
+  }
+
+  .main-layout-content {
     display: flex;
     flex-direction: column;
-    overflow: auto;
 
     .top-section {
       background-color: $color3;
