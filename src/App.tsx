@@ -1,25 +1,62 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import MainLayout from "./layouts/MainLayout";
+
+const feedData = [
+  {
+    img: "/assets/imgs/nft.png",
+    name: "NFT NAME",
+    date: "Aug 1, 2021",
+    num: 5,
+  },
+  {
+    img: "/assets/imgs/nft.png",
+    name: "NFT NAME",
+    date: "Aug 1, 2021",
+    num: 5,
+  },
+  {
+    img: "/assets/imgs/nft.png",
+    name: "NFT NAME",
+    date: "Aug 1, 2021",
+    num: 5,
+  },
+  {
+    img: "/assets/imgs/nft.png",
+    name: "NFT NAME",
+    date: "Aug 1, 2021",
+    num: 5,
+  },
+  {
+    img: "/assets/imgs/nft.png",
+    name: "NFT NAME",
+    date: "Aug 1, 2021",
+    num: 5,
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MainLayout>
+      <div className="text-center">
+        <h2>Checkout Feed</h2>
+
+        <div className="checkout-items mt-4">
+          {feedData.map((el, idx) => {
+            const { img, name, date, num } = el;
+
+            return (
+              <div className="ceckout-item" key={"nft-list-item" + idx}>
+                <div className="img">
+                  <img src={img} alt={name} />
+                </div>
+                <div>{name}</div>
+                <div>{date}</div>
+                <div>{num}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </MainLayout>
   );
 }
 

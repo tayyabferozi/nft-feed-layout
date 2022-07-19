@@ -1,0 +1,136 @@
+@import "./colors";
+@import "./utilities-2";
+@import "./utilities";
+
+#main-layout {
+  height: 100vh;
+  display: flex;
+
+  & > * {
+  }
+
+  .nav {
+    padding: 40px 20px;
+    width: 130px;
+    text-align: center;
+    background-color: $color2;
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    .nav-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+
+        @include transitioned;
+
+        &:hover {
+          background-color: $color1;
+          box-shadow: 0 0 10px rgb(35, 35, 35);
+        }
+      }
+    }
+  }
+
+  .main-layout-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    .top-section {
+      background-color: $color3;
+      padding: 2rem;
+      text-align: center;
+
+      input {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+      }
+
+      .cards {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .card {
+          position: relative;
+          border-radius: 20px;
+          text-align: left;
+          padding: 16px 26px;
+          background-color: $color1;
+          min-width: 130px;
+          box-shadow: 0 0 10px rgb(41, 41, 41);
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            border-radius: 10px;
+            height: calc(100% - 32px);
+            width: 4px;
+            background-color: $color4;
+          }
+
+          .card-head {
+            opacity: 0.5;
+            font-size: 14px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .main-section {
+      overflow: auto;
+      padding: 20px;
+    }
+  }
+}
+
+.checkout-items {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .ceckout-item {
+    display: flex;
+    align-items: center;
+    background-color: $color2;
+    box-shadow: 0 0 10px rgb(32, 32, 32);
+    border-radius: 10px;
+    margin-bottom: 10px;
+
+    & > * {
+      flex-grow: 1;
+      padding: 20px;
+      height: 100%;
+
+      &:last-child {
+        border-right: 0;
+      }
+    }
+
+    .img {
+      max-width: 180px;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+}
